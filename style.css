@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+body{
+    height: 100vh;
+    width: 100%;
+    background: url(moon-bg-img.jpg);
+    background-size: cover;
+    font-family: 'Rubik Doodle Shadow', cursive;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+main > div{
+   
+    width: 100%;
+    flex:1;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 10px;
+    padding: 10px;
+    background-color: transparent;
+    
+}
+
+
+main .box{
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    height: 90%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    transition: all 0.3s ease-in-out;
+
+    color: rgba(0, 12, 11, 0.8);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+main .box:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.winner-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: fit-content;
+    z-index: 2;
+    opacity: 0;
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.winner-card h2{
+    color: rgba(0, 12, 11, 0.8);
+    font-size: 2rem;
+    text-wrap: nowrap;
+    font-weight: bold;
+}
+
+.winner-card #restart{
+    border-radius: 10px;
+    height: 30px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    color: rgba(0, 12, 11, 0.8);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.winner-card #restart:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+    opacity: 0;
+}
+
+.show{
+    display: flex;
+    opacity: 1;
+}
